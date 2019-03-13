@@ -70,9 +70,9 @@ describe('CherrySequelizeConnector class', () => {
     expect(() => connector.checkOptions({
       'dialect': 'mysql',
       'host': 'localhost',
-      'port': '4000',
+      'port': '3306',
       'username': 'root',
-      'password': 'fakePasswordForTestPurpose',
+      'password': '',
       'database': 'test_database',
       'sync': false
     })).to.not.throw()
