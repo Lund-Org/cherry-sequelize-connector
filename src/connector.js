@@ -69,7 +69,7 @@ class CherrySequelizeConnector {
    */
   async postConnectionProcess () {
     if (this.options.postConnectionProcess) {
-      return this.options.postConnectionProcess
+      return this.options.postConnectionProcess()
     }
 
     return Promise.resolve(1)

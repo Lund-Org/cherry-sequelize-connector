@@ -5,6 +5,7 @@ const CherrySequelizeConnector = require('../../src/connector')
 
 describe('CherrySequelizeConnector class', () => {
   const connector = new CherrySequelizeConnector()
+  const connector2 = new CherrySequelizeConnector()
 
   it('Test the identifier constant', () => {
     expect(CherrySequelizeConnector.getIdentifier()).to.be.equal('DatabaseEngine')
@@ -12,70 +13,83 @@ describe('CherrySequelizeConnector class', () => {
 
   it('Test the checkOptions method', () => {
     expect(() => connector.checkOptions({
-      'host': 'test',
-      'port': 'test',
-      'username': 'test',
-      'password': 'test',
-      'database': 'test',
-      'sync': 'test'
+      host: 'test',
+      port: 'test',
+      username: 'test',
+      password: 'test',
+      database: 'test',
+      sync: 'test'
     })).to.throw()
     expect(() => connector.checkOptions({
-      'dialect': 'test',
-      'port': 'test',
-      'username': 'test',
-      'password': 'test',
-      'database': 'test',
-      'sync': 'test'
+      dialect: 'test',
+      port: 'test',
+      username: 'test',
+      password: 'test',
+      database: 'test',
+      sync: 'test'
     })).to.throw()
     expect(() => connector.checkOptions({
-      'dialect': 'test',
-      'host': 'test',
-      'username': 'test',
-      'password': 'test',
-      'database': 'test',
-      'sync': 'test'
+      dialect: 'test',
+      host: 'test',
+      username: 'test',
+      password: 'test',
+      database: 'test',
+      sync: 'test'
     })).to.throw()
     expect(() => connector.checkOptions({
-      'dialect': 'test',
-      'host': 'test',
-      'port': 'test',
-      'password': 'test',
-      'database': 'test',
-      'sync': 'test'
+      dialect: 'test',
+      host: 'test',
+      port: 'test',
+      password: 'test',
+      database: 'test',
+      sync: 'test'
     })).to.throw()
     expect(() => connector.checkOptions({
-      'dialect': 'test',
-      'host': 'test',
-      'port': 'test',
-      'username': 'test',
-      'database': 'test',
-      'sync': 'test'
+      dialect: 'test',
+      host: 'test',
+      port: 'test',
+      username: 'test',
+      database: 'test',
+      sync: 'test'
     })).to.throw()
     expect(() => connector.checkOptions({
-      'dialect': 'test',
-      'host': 'test',
-      'port': 'test',
-      'username': 'test',
-      'password': 'test',
-      'sync': 'test'
+      dialect: 'test',
+      host: 'test',
+      port: 'test',
+      username: 'test',
+      password: 'test',
+      sync: 'test'
     })).to.throw()
     expect(() => connector.checkOptions({
-      'dialect': 'test',
-      'host': 'test',
-      'port': 'test',
-      'username': 'test',
-      'password': 'test',
-      'database': 'test'
+      dialect: 'test',
+      host: 'test',
+      port: 'test',
+      username: 'test',
+      password: 'test',
+      database: 'test'
     })).to.throw()
     expect(() => connector.checkOptions({
-      'dialect': 'mysql',
-      'host': 'localhost',
-      'port': '3306',
-      'username': 'root',
-      'password': '',
-      'database': 'test_database',
-      'sync': false
+      dialect: 'mysql',
+      host: 'localhost',
+      port: '3306',
+      username: 'root',
+      password: '',
+      database: 'test_database',
+      sync: false
     })).to.not.throw()
+
+    connector2.checkOptions({
+      dialect: 'mysql',
+      host: 'localhost',
+      port: '3306',
+      username: 'root',
+      password: '',
+      database: 'test_database',
+      sync: false,
+      postConnectionProcess: () => {
+        return 2
+      }
+    })
   })
 
   it('Test the connectDatabase method', async () => {
@@ -88,8 +102,10 @@ describe('CherrySequelizeConnector class', () => {
 
   it('Test the postConnectionProcess method', async () => {
     let defaultResult = await connector.postConnectionProcess()
+    let defaultResult2 = await connector2.postConnectionProcess()
 
     expect(defaultResult).to.be.equal(1)
+    expect(defaultResult2).to.be.equal(2)
   })
 
   it('Test the getConnection method', () => {
