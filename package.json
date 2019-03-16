@@ -1,6 +1,6 @@
 {
   "name": "@lund-org/cherry-sequelize-connector",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A plugin to use sequelize as the ORM of the framework",
   "main": "./src/connector.js",
   "author": "Lund-Org",
