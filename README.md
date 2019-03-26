@@ -1,6 +1,6 @@
 # Cherry Sequelize Connector
 
-[![Build Status](https://travis-ci.com/Lund-Org/cherry-sequelize-connector.svg?branch=master)](https://travis-ci.com/Lund-Org/cherry-sequelize-connector)
+[![Build Status](https://travis-ci.com/Lund-Org/cherry-sequelize-connector.svg?branch=master)](https://travis-ci.com/Lund-Org/cherry-sequelize-connector) [![Maintainability](https://api.codeclimate.com/v1/badges/c2aa8e3c0c31f742fc0d/maintainability)](https://codeclimate.com/github/Lund-Org/cherry-sequelize-connector/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/c2aa8e3c0c31f742fc0d/test_coverage)](https://codeclimate.com/github/Lund-Org/cherry-sequelize-connector/test_coverage)
 
 A plugin to use [Sequelize](https://github.com/sequelize/sequelize) as the orm in cherry 🍒
 
