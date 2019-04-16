@@ -6,7 +6,7 @@ services:
     restart: always
     ports:
       - "3306:3306"
-    container_name: typeorm_test_db
+    container_name: sequelize_test_db
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
       MYSQL_DATABASE: test_database
