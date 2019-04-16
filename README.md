@@ -25,11 +25,11 @@ Of course, you need a cherry app to use this connector :
 
 ```javascript
 const Cherry = require('@lund-org/cherry')
-const CherryPugConnector = require('@lund-org/cherry-sequelize-connector')
+const CherrySequelizeConnector = require('@lund-org/cherry-sequelize-connector')
 
 const options = {
   ...
-  plugins: [CherryPugConnector]
+  plugins: [CherrySequelizeConnector]
   ...
 }
 
