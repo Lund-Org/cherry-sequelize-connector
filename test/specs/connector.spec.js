@@ -68,6 +68,14 @@ describe('CherrySequelizeConnector class', () => {
       password: 'test',
       database: 'test'
     })).to.throw()
+    expect(() => connector.checkOptions([{
+      dialect: 'test',
+      host: 'test',
+      port: 'test',
+      username: 'test',
+      password: 'test',
+      database: 'test'
+    }])).to.throw()
     expect(() => connector.checkOptions({
       dialect: 'mysql',
       host: 'localhost',
