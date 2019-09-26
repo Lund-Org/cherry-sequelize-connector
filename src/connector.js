@@ -35,7 +35,7 @@ class CherrySequelizeConnector {
    */
   checkOptions (options) {
     if (Array.isArray(options)) {
-      throw new Error(`Sequelize doesn't manage the multiconnection with only one object. If you want to use a multiconnection, take a look at Typeorm`)
+      throw new Error('Sequelize doesn\'t manage the multiconnection with only one object. If you want to use a multiconnection, take a look at Typeorm')
     } else {
       [
         'dialect',

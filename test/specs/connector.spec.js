@@ -109,8 +109,8 @@ describe('CherrySequelizeConnector class', () => {
   })
 
   it('Test the postConnectionProcess method', async () => {
-    let defaultResult = await connector.postConnectionProcess()
-    let defaultResult2 = await connector2.postConnectionProcess()
+    const defaultResult = await connector.postConnectionProcess()
+    const defaultResult2 = await connector2.postConnectionProcess()
 
     expect(defaultResult).to.be.equal(1)
     expect(defaultResult2).to.be.equal(2)
